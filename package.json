@@ -6,7 +6,21 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "discord.js": "^14.0.0",
-    "node-cron": "^3.0.0"
-  }
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.3.1",
+    "node-cron": "^3.0.3"
+  },
+  "description": "A **Node.js** Discord bot that automatically creates a daily thread for artists to log and track their task progress.   Keeps the team organized and ensures daily updates are recorded efficiently.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelGuarrochena/discord-bot-for-daily-threads.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/miguelGuarrochena/discord-bot-for-daily-threads/issues"
+  },
+  "homepage": "https://github.com/miguelGuarrochena/discord-bot-for-daily-threads#readme"
 }
