@@ -50,6 +50,22 @@ function log(message) {
   console.log(`[${new Date().toISOString()}] ${message}`);
 }
 
+// ✅ NUEVO: Archiva los hilos que no son de hoy
+async function archivarHilosAnteriores(canal, fecha) {
+  const activeThreads = await canal.threads.fetchActive();
+
+  for (const [, hilo] of activeThreads.threads) {
+    const esDeEsteCanal = hilo.parentId === canal.id;
+    const esDeHoy = hilo.name.includes(fecha);
+
+    if (esDeEsteCanal && !esDeHoy) {
+      await hilo.setArchived(true);
+      log(`Archivado: ${hilo.name}`);
+      await new Promise((r) => setTimeout(r, 500));
+    }
+  }
+}
+
 async function crearHilos() {
   if (isRunning) {
     log("Ya se está ejecutando.");
@@ -71,6 +87,9 @@ async function crearHilos() {
       month: "2-digit",
       year: "numeric",
     });
+
+    // ✅ NUEVO: Archivar hilos viejos antes de crear los nuevos
+    await archivarHilosAnteriores(canal, fecha);
 
     const activeThreads = await canal.threads.fetchActive();
 
