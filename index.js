@@ -11,7 +11,7 @@ MANUAL → Se ejecuta una sola vez al iniciar
 ====================================
 */
 
-const MODO = "MANUAL"; // Cambiar a "MANUAL" cuando sea necesario
+const MODO = "AUTO"; // Cambiar a "MANUAL" cuando sea necesario
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds],
