@@ -11,7 +11,7 @@ MANUAL → Se ejecuta una sola vez al iniciar
 ====================================
 */
 
-const MODO = "AUTO"; // Cambiar a "MANUAL" cuando sea necesario
+const MODO = "MANUAL"; // Cambiar a "MANUAL" cuando sea necesario
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds],
@@ -107,7 +107,12 @@ client.once("ready", async () => {
 
   if (MODO === "MANUAL") {
     log("Modo MANUAL activado");
-    await crearHilos();
+    const dia = new Date().getDay();
+    if (dia === 0 || dia === 6) {
+      log("Fin de semana, no se ejecuta.");
+    } else {
+      await crearHilos();
+    }
   }
 
   if (MODO === "AUTO") {
