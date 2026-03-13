@@ -27,7 +27,7 @@ const AREAS = [
   { nombre: "EA Leads", rol: "1436365943482617989" },
   { nombre: "Layout", rol: "1338882968176951407" },
   { nombre: "Animación", rol: "1349879849237479464" },
-  { nombre: "Assit", rol: "1435342725636427840" },
+  { nombre: "Assist", rol: "1435342725636427840" },
   { nombre: "Clean up", rol: "1349880578572423178" },
   { nombre: "BG color", rol: "1349880301899481198" },
   { nombre: "Compo", rol: "1349880945125228565" },
